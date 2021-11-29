@@ -1,5 +1,5 @@
 {
-  "name": "mern-social-media",
+  "name": "tourney_terra",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
@@ -18,6 +18,6 @@
     "if-env": "^1.0.4"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "nodemon": "^2.0.3"
   }
 }
