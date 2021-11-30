@@ -1,4 +1,5 @@
 import React from "react";
+import Home from "./pages/Home"
 
 // // We use Route in order to define the different routes of our application
 // import { Route } from "react-router-dom";
@@ -12,7 +13,7 @@ import React from "react";
 const App = () => {
   return (
     <div>
-
+<Home/>
     </div>
   );
 };
