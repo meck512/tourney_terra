@@ -1,10 +1,9 @@
 const faker = require('faker');
 
 const db = require('../config/connection');
-const { Thought, User } = require('../models');
+const { User } = require('../models');
 
 db.once('open', async () => {
-  await Thought.deleteMany({});
   await User.deleteMany({});
 
   // create user data
@@ -18,7 +17,7 @@ db.once('open', async () => {
     userData.push({ username, email, password });
   }
 
-  const createdUsers = await User.collection.insertMany(userData)
+  const createdUsers = await User.collection.insertMany(userData);
 
   console.log('all done!');
   process.exit(0);
