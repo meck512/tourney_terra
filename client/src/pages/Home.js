@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-// import { Tabs } from '@mui/material';
+
 import NavTabs from '../components/nav';
 import LoginForm from '../components/LoginForm';
 import SignupForm from '../components/SignupForm';
