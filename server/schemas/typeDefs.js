@@ -7,6 +7,14 @@ const typeDefs = gql`
     email: String
   }
 
+  type Event {
+    _id: ID
+    eventText: String
+    createdAt: String
+    username: String
+    eventCount: Int
+  }
+
   type Auth {
     token: ID!
     user: User
@@ -16,11 +24,14 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
+    events(username: String): [Event]
+    event(_id: ID!): Event
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    addEvent(eventText: String!): Event
   }
 `;
 
