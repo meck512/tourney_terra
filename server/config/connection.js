@@ -1,14 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/tourney_terra',
-  {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  })
-  .then(() => console.log("MongoDB connected..."))
-  .catch((err) => console.log(err));
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/PleaseWork', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
 
 module.exports = mongoose.connection;
