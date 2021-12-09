@@ -27,83 +27,84 @@ import Home from "./pages/Home"
 //   },
 //   uri: '/graphql'
 // });
-import { ThemeProvider } from '@mui/styles';
-import { useTheme } from '@mui/styles';
-import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
+
+// import { ThemeProvider } from '@mui/styles';
+// import { useTheme } from '@mui/styles';
+// import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 
 
-const TourneyTerraTheme = {
+// const TourneyTerraTheme = {
 
-  palette: {
-    type: 'dark',
-    primary: {
-      main: '#330072',
-    },
-    secondary: {
-      main: '#333333',
-    },
-    success: {
-      main: '#97d700',
-    },
-    error: {
-      main: '#e10098',
-    },
-  },
-  typography: {
-    fontFamily: 'Montserrat',
-  },
-  props: {
-    MuiButton: {
-      size: 'small',
-    },
-    MuiButtonGroup: {
-      size: 'small',
-    },
-    MuiCheckbox: {
-      size: 'small',
-    },
-    MuiFab: {
-      size: 'small',
-    },
-    MuiFormControl: {
-      margin: 'dense',
-      size: 'small',
-    },
-    MuiFormHelperText: {
-      margin: 'dense',
-    },
-    MuiIconButton: {
-      size: 'small',
-    },
-    MuiInputBase: {
-      margin: 'dense',
-    },
-    MuiInputLabel: {
-      margin: 'dense',
-    },
-    MuiRadio: {
-      size: 'small',
-    },
-    MuiSwitch: {
-      size: 'small',
-    },
-    MuiTextField: {
-      margin: 'dense',
-      size: 'small',
-    },
-  },
-};
+//   palette: {
+//     type: 'dark',
+//     primary: {
+//       main: '#330072',
+//     },
+//     secondary: {
+//       main: '#333333',
+//     },
+//     success: {
+//       main: '#97d700',
+//     },
+//     error: {
+//       main: '#e10098',
+//     },
+//   },
+//   typography: {
+//     fontFamily: 'Montserrat',
+//   },
+//   props: {
+//     MuiButton: {
+//       size: 'small',
+//     },
+//     MuiButtonGroup: {
+//       size: 'small',
+//     },
+//     MuiCheckbox: {
+//       size: 'small',
+//     },
+//     MuiFab: {
+//       size: 'small',
+//     },
+//     MuiFormControl: {
+//       margin: 'dense',
+//       size: 'small',
+//     },
+//     MuiFormHelperText: {
+//       margin: 'dense',
+//     },
+//     MuiIconButton: {
+//       size: 'small',
+//     },
+//     MuiInputBase: {
+//       margin: 'dense',
+//     },
+//     MuiInputLabel: {
+//       margin: 'dense',
+//     },
+//     MuiRadio: {
+//       size: 'small',
+//     },
+//     MuiSwitch: {
+//       size: 'small',
+//     },
+//     MuiTextField: {
+//       margin: 'dense',
+//       size: 'small',
+//     },
+//   },
+// };
 
 
 
 const App = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
 
   return (
-    <ThemeProvider theme={TourneyTerraTheme}>
+    // <ThemeProvider theme={TourneyTerraTheme}>
+    // <Home />
+    // </ThemeProvider>
     <Home />
-    </ThemeProvider>
-
     // <ApolloProvider client={client}>
     //   <Router>
     //     <div className="flex-column justify-flex-start min-100-vh">
