@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NoMatch = () => {
+const NoMatch404 = () => {
   return (
     <div>
       Oops, we couldn't find that page.
@@ -8,4 +8,4 @@ const NoMatch = () => {
   );
 };
 
-export default NoMatch;
+export default NoMatch404;
