@@ -1,19 +1,40 @@
 import React from 'react';
-import Button from '@mui/material/Button';
 
-import NavTabs from '../components/nav';
+import { Grid } from '@mui/material';
+
 import LoginForm from '../components/LoginForm';
 import SignupForm from '../components/SignupForm';
+import SearchForm from '../components/AddEventForm';
+import SearchResult from '../components/searchResults';
+import AddEventForm from '../components/SearchTourneyTerra';
 
-function Home() {
+
+const Home = () => {
   return (
-      <div>
-<NavTabs/>
-<LoginForm/>
-<SignupForm/>
-    <h1>HI</h1>
-    <Button variant="contained">Hello World</Button>
-    </div>
+    <Grid container spacing={3}>
+
+      <Grid item xs={6}>
+        <LoginForm />
+      </Grid>
+
+      <Grid item xs={6}>
+      <SignupForm />
+      </Grid>
+
+      <Grid item xs={6}>
+      <AddEventForm />
+      </Grid>
+
+      <Grid item xs={6}>
+      <SearchForm />
+      </Grid>
+
+      <Grid item xs={6}>
+      <SearchResult />
+      </Grid>
+
+
+    </Grid>
   );
 }
 

@@ -1,18 +1,14 @@
-// // register button
-// login button
-// logout button
-
-// search button - search page - search form - search results page - search results list
-
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import { color } from '@mui/system';
+import Button from '@mui/material/Button';
 
 function LinkTab(props) {
   return (
     <Tab
-      component="a"
+      component="nav"
       onClick={(event) => {
         event.preventDefault();
       }}
@@ -29,11 +25,24 @@ export default function NavTabs() {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Tabs value={value} onChange={handleChange} aria-label="nav tabs example">
-        <LinkTab label="Search" href="/drafts" />
-        <LinkTab label="Profile" href="/trash" />
-        <LinkTab label="Contact" href="/spam" />
+    <Box sx={{ width: '100%', backgroundColor: 'white' }}>
+
+
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        centered
+        aria-label="nav tabs example"
+        textColor="black"
+        indicatorColor="black"
+      >
+
+        <LinkTab label="Login" href="/login" />
+        <LinkTab label="Sign-Up" href="/sign-up" />
+        <LinkTab label="Search" href="/search" />
+        <LinkTab label="Profile" href="/profile" />
+        <LinkTab label="Contact" href="/contact" />
+
       </Tabs>
     </Box>
   );
