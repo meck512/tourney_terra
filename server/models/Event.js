@@ -10,6 +10,27 @@ const eventSchema = new Schema(
       minlength: 1,
       maxlength: 280
     },
+    eventCategory: {
+      type: String
+    },
+    sports: {
+      type: String
+    },
+    gamblingBingo: {
+      type: String
+    },
+    gamingEsports: {
+      type: String
+    },
+    cookingCrafts: {
+      type: String
+    },
+    ageGroup: {
+      type: String
+    },
+    gender: {
+      type: String
+    },
     createdAt: {
       type: Date,
       default: Date.now,
