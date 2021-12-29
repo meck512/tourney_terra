@@ -26,10 +26,14 @@ export const QUERY_ME_BASIC = gql`
       _id
       username
       email
-      friendCount
-      friends {
+      eventCount
+      Event {
         _id
-        username
+        eventCategory
+        ageGroup
+        gender
+        eventText
+        createdAt
       }
     }
   }
