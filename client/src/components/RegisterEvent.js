@@ -57,9 +57,6 @@ const RegisterEvent = () => {
                             id="name"
                             label="Event Title"
                             variant="outlined"
-                            
-                            
-
                             onChange={handleChange} />
                         <br /><br />
 
