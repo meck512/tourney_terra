@@ -15,7 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "react-hook-form": "^7.22.5"
   },
   "devDependencies": {
     "concurrently": "^6.4.0"

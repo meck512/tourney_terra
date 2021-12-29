@@ -4,9 +4,9 @@ import { Grid } from '@mui/material';
 
 import LoginForm from '../components/LoginForm';
 import SignupForm from '../components/SignupForm';
-import SearchForm from '../components/AddEventForm';
+import SearchForm from '../components/RegisterEvent';
 import SearchResult from '../components/searchResults';
-import AddEventForm from '../components/SearchTourneyTerra';
+import RegisterEvent from '../components/RegisterEvent';
 
 
 const Home = () => {
@@ -22,7 +22,7 @@ const Home = () => {
       </Grid>
 
       <Grid item xs={6}>
-      <AddEventForm />
+      <RegisterEvent />
       </Grid>
 
       <Grid item xs={6}>

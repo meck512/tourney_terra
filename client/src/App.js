@@ -13,7 +13,6 @@ import NoMatch404 from './pages/NoMatch404';
 import EventSearch from './pages/EventSearch';
 import UserProfile from './pages/UserProfile';
 import SignupForm from './components/SignupForm';
-import SearchForm from './components/AddEventForm';
 import NavTabs from './components/nav';
 
 const client = new ApolloClient({
