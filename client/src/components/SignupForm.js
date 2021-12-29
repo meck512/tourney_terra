@@ -1,66 +1,117 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const SignupForm = () => {
-  const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+import { makeStyles } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
-  // update state based on form input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+import { useForm, Controller } from 'react-hook-form';
 
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
+const useStyles = makeStyles(theme => ({
+    root: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: theme.spacing(2),
+        background: 'white',
 
-  // submit form
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-  };
+        '& .MuiTextField-root': {
+            margin: theme.spacing(1),
+            width: '300px',
+        },
+        '& .MuiButtonBase-root': {
+            margin: theme.spacing(2),
+        },
+    },
+}));
 
-  return (
-    <main className='flex-row justify-center mb-4'>
-      <div className='col-12 col-md-6'>
-        <div className='card'>
-          <h4 className='card-header'>Sign Up</h4>
-          <div className='card-body'>
-            <form onSubmit={handleFormSubmit}>
-              <input
-                className='form-input'
-                placeholder='Your username'
-                name='username'
-                type='username'
-                id='username'
-                value={formState.username}
-                onChange={handleChange}
-              />
-              <input
-                className='form-input'
-                placeholder='Your email'
-                name='email'
-                type='email'
-                id='email'
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className='form-input'
-                placeholder='******'
-                name='password'
-                type='password'
-                id='password'
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button className='btn d-block w-100' type='submit'>
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+const SignUpForm = ({ handleClose1 }) => {
+    const classes = useStyles();
+    const { handleSubmit1, control } = useForm();
+
+    const onSubmit = data => {
+        console.log(data)
+        alert(JSON.stringify(data));
+    };
+
+    return (
+      <form className={classes.root} onSubmit={handleSubmit1(onSubmit)}>
+			<Controller
+				name="firstName"
+				control={control}
+				defaultValue=""
+				render={({ field: { onChange, value }, fieldState: { error } }) => (
+					<TextField
+						label="First Name"
+						variant="filled"
+						value={value}
+						onChange={onChange}
+						error={!!error}
+						helperText={error ? error.message : null}
+					/>
+				)}
+				rules={{ required: 'First name required' }}
+			/>
+			<Controller
+				name="lastName"
+				control={control}
+				defaultValue=""
+				render={({ field: { onChange, value }, fieldState: { error } }) => (
+					<TextField
+						label="Last Name"
+						variant="filled"
+						value={value}
+						onChange={onChange}
+						error={!!error}
+						helperText={error ? error.message : null}
+					/>
+				)}
+				rules={{ required: 'Last name required' }}
+			/>
+			<Controller
+				name="email"
+				control={control}
+				defaultValue=""
+				render={({ field: { onChange, value }, fieldState: { error } }) => (
+					<TextField
+						label="Email"
+						variant="filled"
+						value={value}
+						onChange={onChange}
+						error={!!error}
+						helperText={error ? error.message : null}
+						type="email"
+					/>
+				)}
+				rules={{ required: 'Email required' }}
+			/>
+			<Controller
+				name="password"
+				control={control}
+				defaultValue=""
+				render={({ field: { onChange, value }, fieldState: { error } }) => (
+					<TextField
+						label="Password"
+						variant="filled"
+						value={value}
+						onChange={onChange}
+						error={!!error}
+						helperText={error ? error.message : null}
+						type="password"
+					/>
+				)}
+				rules={{ required: 'Password required' }}
+			/>
+			<div>
+				<Button variant="contained" onClick={handleClose1}>
+					Cancel
+				</Button>
+				<Button type="submit" variant="contained" color="primary">
+					Signup
+				</Button>
+			</div>
+		</form>
+    );
 };
 
-export default SignupForm;
+export default SignUpForm;

@@ -35,7 +35,6 @@ const App = () => {
       <Router>
 
         <div className="flex-column justify-flex-start min-100-vh">
-        <NavTabs />
           <Header />
 
           <div className="container">

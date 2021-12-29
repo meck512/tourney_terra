@@ -1,10 +1,13 @@
 import * as React from 'react';
+import { useState } from 'react';
 
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { color } from '@mui/system';
 import Button from '@mui/material/Button';
+
+import ModalDialog from '../components/ModalDialog';
 
 function LinkTab(props) {
   return (
@@ -19,6 +22,18 @@ function LinkTab(props) {
 }
 
 export default function NavTabs() {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen1 = () => {
+    setOpen(true);
+  };
+
+  const handleClose1 = () => {
+    setOpen(false);
+  };
+
+
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -39,9 +54,14 @@ export default function NavTabs() {
       >
 
         <LinkTab label="Login" href="/login" />
-        <LinkTab label="Sign-Up" href="/sign-up" />
+
+        <LinkTab label="Sign-Up" href="/sign-up" onClick={handleOpen1} />
+        <ModalDialog open={open} handleClose={handleClose1} />
+
         <LinkTab label="Search" href="/search" />
+
         <LinkTab label="Profile" href="/profile" />
+
         <LinkTab label="Contact" href="/contact" />
 
       </Tabs>
