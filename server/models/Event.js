@@ -5,24 +5,12 @@ const dateFormat = require('../utils/dateFormat');
 const eventSchema = new Schema(
   {
     eventText: {
-      type: String,
-      required: 'You need to post an event!',
-      minlength: 1,
-      maxlength: 280
+      type: String
     },
     eventCategory: {
       type: String
     },
-    sports: {
-      type: String
-    },
-    gamblingBingo: {
-      type: String
-    },
-    gamingEsports: {
-      type: String
-    },
-    cookingCrafts: {
+    eventType: {
       type: String
     },
     ageGroup: {
