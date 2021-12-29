@@ -1,6 +1,6 @@
 import React from 'react';
 import Dialog from '@material-ui/core/Dialog';
-import Form from '../components/REGISTEREVENT2';
+import Form from './RegisterEventForm';
 
 const ModalDialog = ({ open, handleClose }) => {
 	return (
