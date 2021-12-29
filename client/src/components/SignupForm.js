@@ -6,6 +6,10 @@ import Button from '@material-ui/core/Button';
 
 import { useForm, Controller } from 'react-hook-form';
 
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
+
 const useStyles = makeStyles(theme => ({
     root: {
         display: 'flex',
@@ -25,17 +29,19 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const SignUpForm = ({ handleClose1 }) => {
+const SignUpForm = ({ handleClose }) => {
     const classes = useStyles();
-    const { handleSubmit1, control } = useForm();
+    const { handleSubmit, control } = useForm();
 
     const onSubmit = data => {
         console.log(data)
         alert(JSON.stringify(data));
     };
 
+    const [addUser] = useMutation(ADD_USER);
+
     return (
-      <form className={classes.root} onSubmit={handleSubmit1(onSubmit)}>
+      <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
 			<Controller
 				name="firstName"
 				control={control}
@@ -103,7 +109,7 @@ const SignUpForm = ({ handleClose1 }) => {
 				rules={{ required: 'Password required' }}
 			/>
 			<div>
-				<Button variant="contained" onClick={handleClose1}>
+				<Button variant="contained" onClick={handleClose}>
 					Cancel
 				</Button>
 				<Button type="submit" variant="contained" color="primary">

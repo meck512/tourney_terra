@@ -24,11 +24,11 @@ function LinkTab(props) {
 export default function NavTabs() {
   const [open, setOpen] = useState(false);
 
-  const handleOpen1 = () => {
+  const handleOpen = () => {
     setOpen(true);
   };
 
-  const handleClose1 = () => {
+  const handleClose = () => {
     setOpen(false);
   };
 
@@ -55,8 +55,8 @@ export default function NavTabs() {
 
         <LinkTab label="Login" href="/login" />
 
-        <LinkTab label="Sign-Up" href="/sign-up" onClick={handleOpen1} />
-        <ModalDialog open={open} handleClose={handleClose1} />
+        <LinkTab label="Sign-Up" href="/sign-up" onClick={handleOpen} />
+        <ModalDialog open={open} handleClose={handleClose} />
 
         <LinkTab label="Search" href="/search" />
 

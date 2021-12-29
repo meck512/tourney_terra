@@ -16,6 +16,7 @@ const Header = () => {
     <Box sx={{ width: '100%' }}>
 
       <NavTabs />
+      
       <CardMedia
         component="img"
         image={heroIMG}
