@@ -15,6 +15,7 @@ import UserProfile from './pages/UserProfile';
 import SignupForm from './components/SignupForm';
 import NavTabs from './components/nav';
 
+
 const client = new ApolloClient({
   request: operation => {
     const token = localStorage.getItem('id_token');

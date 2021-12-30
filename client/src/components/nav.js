@@ -7,7 +7,8 @@ import Tab from '@mui/material/Tab';
 import { color } from '@mui/system';
 import Button from '@mui/material/Button';
 
-import ModalDialog from '../components/ModalDialog';
+import Dialog from '@material-ui/core/Dialog';
+import SignUpForm from './SignupForm';
 
 function LinkTab(props) {
   return (
@@ -56,7 +57,9 @@ export default function NavTabs() {
         <LinkTab label="Login" href="/login" />
 
         <LinkTab label="Sign-Up" href="/sign-up" onClick={handleOpen} />
-        <ModalDialog open={open} handleClose={handleClose} />
+        <Dialog open={open} onClose={handleClose}>
+          <SignUpForm />
+        </Dialog>
 
         <LinkTab label="Search" href="/search" />
 
