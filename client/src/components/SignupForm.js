@@ -4,11 +4,12 @@ import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+
 import { useForm, Controller } from 'react-hook-form';
 
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
-import Auth from '../utils/auth';
+// import { useMutation } from '@apollo/client';
+// import { ADD_USER } from '../utils/mutations';
+// import Auth from '../utils/auth';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -38,7 +39,7 @@ const SignUpForm = ({ handleClose }) => {
         alert(JSON.stringify(data));
     };
 
-    const [addUser] = useMutation(ADD_USER);
+    // const [addUser] = useMutation(ADD_USER);
 
     return (
       <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
