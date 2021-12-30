@@ -9,6 +9,7 @@ import Button from '@mui/material/Button';
 
 import Dialog from '@material-ui/core/Dialog';
 import SignUpForm from './SignupForm';
+import LoginForm from './LoginForm';
 
 function LinkTab(props) {
   return (
@@ -44,7 +45,6 @@ export default function NavTabs() {
   return (
     <Box sx={{ width: '100%', backgroundColor: 'white' }}>
 
-
       <Tabs
         value={value}
         onChange={handleChange}
@@ -54,11 +54,14 @@ export default function NavTabs() {
         indicatorColor="black"
       >
 
-        <LinkTab label="Login" href="/login" />
+        <LinkTab label="Login" href="/login" onClick={handleOpen} />
+        <Dialog open={open} onClose={handleClose}>
+          <LoginForm handleClose={handleClose}/>
+        </Dialog>
 
         <LinkTab label="Sign-Up" href="/sign-up" onClick={handleOpen} />
         <Dialog open={open} onClose={handleClose}>
-          <SignUpForm />
+          <SignUpForm handleClose={handleClose} />
         </Dialog>
 
         <LinkTab label="Search" href="/search" />
