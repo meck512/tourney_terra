@@ -28,13 +28,7 @@ const Home = () => {
   return (
     <Grid container spacing={3}>
 
-      <Grid item xs={6}>
-        <LoginForm />
-      </Grid>
 
-      <Grid item xs={6}>
-        <SignupForm />
-      </Grid>
 
       <Grid item xs={6}>
         <Button variant="contained" color="primary" onClick={handleOpen}>
