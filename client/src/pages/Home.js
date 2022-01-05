@@ -8,6 +8,7 @@ import LoginForm from '../components/LoginForm';
 import SignupForm from '../components/SignupForm';
 import SearchResult from '../components/searchResults';
 import RegisterEventForm from '../components/RegisterEventForm';
+import SearchTourneyTerra from '../components/SearchTourneyTerra';
 
 
 
@@ -28,7 +29,13 @@ const Home = () => {
   return (
     <Grid container spacing={3}>
 
+      <Grid item xs={12}>
+        <SearchTourneyTerra />
+      </Grid>
 
+      <Grid item xs={6}>
+
+      </Grid>
 
       <Grid item xs={6}>
         <Button variant="contained" color="primary" onClick={handleOpen}>

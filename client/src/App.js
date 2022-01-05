@@ -10,11 +10,8 @@ import Footer from './components/Footer';
 import Home from "./pages/Home"
 import LoginForm from './components/LoginForm';
 import NoMatch404 from './pages/NoMatch404';
-import EventSearch from './pages/EventSearch';
 import UserProfile from './pages/UserProfile';
 import SignupForm from './components/SignupForm';
-import NavTabs from './components/nav';
-
 
 const client = new ApolloClient({
   request: operation => {
