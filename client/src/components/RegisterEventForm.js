@@ -35,7 +35,7 @@ const Form = ({ handleClose }) => {
     };
 
     return (
-        <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
+        <form   onSubmit={handleSubmit(onSubmit)}>
 
             <Controller
                 name="name"
