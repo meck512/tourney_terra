@@ -19,6 +19,14 @@ export const QUERY_ME = gql`
     }
   }
 `;
+export const QUERY_USERS = gql` {
+  users {
+    _id
+    username
+    email
+  }
+}
+`;
 
 export const QUERY_ME_BASIC = gql`
   {
@@ -26,7 +34,7 @@ export const QUERY_ME_BASIC = gql`
       _id
       username
       email
-      eventCount
+      
       Event {
         _id
         eventCategory
@@ -38,3 +46,19 @@ export const QUERY_ME_BASIC = gql`
     }
   }
 `;
+
+export const Query_Event = gql`
+  query events($username: String) {
+    events(username: $username) {
+      _id
+      eventCategory
+      createdAt
+      username
+      eventType
+      ageGroup
+      gender
+      eventText
+      dateOfEvent
+    }
+  }
+  `;
