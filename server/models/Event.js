@@ -28,6 +28,9 @@ const eventSchema = new Schema(
       type: String,
       required: true
     },
+    dateOfEvent: {
+      type: String
+    }
   },
   {
     toJSON: {
