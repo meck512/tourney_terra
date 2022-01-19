@@ -1,19 +1,22 @@
+// REACT
 import React from 'react';
 import heroIMG from '../assets/images/TourneyTerra_Color_Long.jpg';
-import NavTabs from '../components/nav';
 
+// import background from '../assets/images/stockallsportsimage.jpg';
+
+// MUI
 import Box from '@mui/material/Box';
 import CardMedia from '@mui/material/CardMedia';
 
 
-
+// MAIN
 const Header = () => {
 
+
+  // RETURN
   return (
 
     <Box sx={{ width: '100%' }}>
-
-      <NavTabs />
 
       <CardMedia
         component="img"
@@ -29,4 +32,3 @@ const Header = () => {
 };
 
 export default Header;
-

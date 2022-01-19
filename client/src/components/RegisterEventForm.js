@@ -1,32 +1,14 @@
 import React from 'react';
 
-import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 import { useForm, Controller } from 'react-hook-form';
 
-const useStyles = makeStyles(theme => ({
-    root: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: theme.spacing(2),
-        background: 'white',
 
-        '& .MuiTextField-root': {
-            margin: theme.spacing(1),
-            width: '300px',
-        },
-        '& .MuiButtonBase-root': {
-            margin: theme.spacing(2),
-        },
-    },
-}));
 
 const Form = ({ handleClose }) => {
-    const classes = useStyles();
+
     const { handleSubmit, control } = useForm();
 
     const onSubmit = data => {
@@ -35,7 +17,7 @@ const Form = ({ handleClose }) => {
     };
 
     return (
-        <form   onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
 
             <Controller
                 name="name"

@@ -5,23 +5,39 @@
 // post an event button - post event page/modal - post event form
 
 import React from 'react';
+import { Box } from '@material-ui/core';
 
-const Profile = () => {
+import Header from '../components/Header';
+
+const UserProfile = () => {
+
+
   return (
-    <div>
-      <div className="flex-row mb-3">
-        <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          {/* Viewing <usernames>'s profile. */}
-        </h2>
-      </div>
 
-      <div className="flex-row justify-space-between mb-3">
-        <div className="col-12 mb-3 col-lg-8">{/* PRINT THOUGHT LIST  */}</div>
 
-        <div className="col-12 col-lg-3 mb-3">{/* PRINT FRIEND LIST */}</div>
-      </div>
-    </div>
+      <Box
+        sx={{
+          bgcolor: 'background.default',
+          display: 'grid'
+        }}
+      >
+
+
+
+
+
+        <Header />
+
+        <p>USER PROFILE</p>
+
+
+
+
+
+
+      </Box>
+
   );
 };
 
-export default Profile;
+export default UserProfile;

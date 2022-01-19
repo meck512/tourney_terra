@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -8,15 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-
-
-
+import { Paper, Typography } from '@mui/material';
 
 
 const ITEM_HEIGHT = 48;
@@ -30,21 +21,7 @@ const MenuProps = {
     },
 };
 
-const category = [
-    'Sports',
-    'E-Sports',
-    'Gambling/BINGO',
-    'Cooking/Crafts'
-]
-
-// const categories = [
-//     'Sports',
-//     'E-Sports',
-//     'Gambling/BINGO',
-//     'Cooking/Crafts'
-// ]
-
-const sport = [
+const sports = [
     'Archery',
     'Badminton',
     'Baseball',
@@ -95,161 +72,72 @@ const sport = [
     'Wrestling Freestyle',
     'Wrestling Greco Roman',
     'Wrestling Folk'
+];
 
-]
-
-function getStyles(category, categoryName, theme) {
+function getStyles(name, searchInput, theme) {
     return {
         fontWeight:
-            categoryName.indexOf(category) === -1
+            searchInput.indexOf(name) === -1
                 ? theme.typography.fontWeightRegular
                 : theme.typography.fontWeightMedium,
     };
-};
+}
 
-
-const SearchTourneyTerra = () => {
+export default function MultipleSelectChip() {
     const theme = useTheme();
-    const [categoryName, setCategory] = React.useState([]);
+    const [searchInput, setSearchInput] = React.useState([]);
 
     const handleChange = (event) => {
         const {
             target: { value },
         } = event;
-        setCategory(
+        setSearchInput(
             // On autofill we get a stringified value.
             typeof value === 'string' ? value.split(',') : value,
         );
     };
 
-
     return (
-        <Box>
-            <Card sx={{ width: '70%' }}>
-                <CardContent>
-                    <Typography gutterBottom variant="h4" component="div">
-                        Search
-                    </Typography>
-
-                    <FormControl sx={{ m: 1, minWidth: 120 }}>
-                        <InputLabel htmlFor="grouped-native-select">Category</InputLabel>
-                        <Select native defaultValue="" id="grouped-native-select" label="Grouping">
-                            <option aria-label="None" value="" />
-                            <optgroup label="Sports">
-                                <option value={1}>Baseball</option>
-                                <option value={2}>Rugby</option>
-                            </optgroup>
-                            <optgroup label="Cooking/Crafts">
-                                <option value={3}>Baking</option>
-                                <option value={4}>BBQ</option>
-                            </optgroup>
-                        </Select>
-                    </FormControl>
 
 
+        <Paper>
+            <Typography variant='h3' align='center'>Search</Typography>
 
 
+            <div align='center'>
 
-
-
-                    <div>
-                        <FormControl sx={{ m: 1, width: 300 }}>
-
-                            <InputLabel id="demo-multiple-chip-label">
-                                Category
-                            </InputLabel>
-
-                            <Select
-                                labelId="demo-multiple-chip-label"
-                                id="demo-multiple-chip"
-                                multiple
-                                value={categoryName}
-                                onChange={handleChange}
-                                input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-                                renderValue={(selected) => (
-                                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                                        {selected.map((value) => (
-                                            <Chip key={value} label={value} />
-                                        ))}
-                                    </Box>
-                                )}
-                                MenuProps={MenuProps}
-                            >
-
-                                {category.map((category) => (
-                                    <MenuItem
-                                        key={category}
-                                        value={category}
-                                        style={getStyles(category, categoryName, theme)}
-                                    >
-                                        {category}
-                                    </MenuItem>
+                <FormControl sx={{ m: 1, width: 300 }}>
+                    <InputLabel id="introSearch">Sports</InputLabel>
+                    <Select
+                        labelId="introSearch"
+                        id="introSearchID"
+                        multiple
+                        value={searchInput}
+                        onChange={handleChange}
+                        input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+                        renderValue={(selected) => (
+                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                                {selected.map((value) => (
+                                    <Chip key={value} label={value} />
                                 ))}
-                            </Select>
-
-
-                        </FormControl>
-                    </div>
-                    {/* 
-                    <div>
-                        <FormControl sx={{ m: 1, width: 300 }}>
-                            <InputLabel id="demo-multiple-chip-label">Sports
-                            </InputLabel>
-                            <Select
-                                labelId="demo-multiple-chip-label"
-                                id="demo-multiple-chip"
-                                multiple
-                                value={categoryName}
-                                onChange={handleChange}
-                                input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-                                renderValue={(selected) => (
-                                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                                        {selected.map((value) => (
-                                            <Chip key={value} label={value} />
-                                        ))}
-                                    </Box>
-                                )}
-                                MenuProps={MenuProps}
+                            </Box>
+                        )}
+                        MenuProps={MenuProps}
+                    >
+                        {sports.map((name) => (
+                            <MenuItem
+                                key={name}
+                                value={name}
+                                style={getStyles(name, searchInput, theme)}
                             >
-                                {sport.map((sport) => (
-                                    <MenuItem
-                                        key={sport}
-                                        value={sport}
-                                        style={getStyles(sport, categoryName, theme)}
-                                    >
-                                        {sport}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-                    </div> */}
+                                {name}
+                            </MenuItem>
+                        ))}
+                    </Select>
+                </FormControl>
+            </div>
+            
+        </Paper>
 
-
-
-
-
-
-
-                    <Typography variant="body2">
-                        Category, subcatagory/sport, Location (google location or address input), Radius(defualt 100miles?),dates (pick between), age range, gender
-                    </Typography>
-
-
-
-                    <CardActions>
-                        <Button variant="contained" size="large" color="primary">Search</Button>
-                    </CardActions>
-
-                </CardContent>
-            </Card>
-        </Box>
     );
 }
-
-
-export default SearchTourneyTerra;
-
-
-
-
-
