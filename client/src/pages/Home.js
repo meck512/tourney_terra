@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import ModalDialog from '../components/ModalDialog';
 import { Grid } from '@mui/material';
+import { Box } from '@mui/material';
 
 
 // FORMS (not highlighted because they are not rendered until clicked)
@@ -14,12 +15,15 @@ import SignupForm from '../components/SignupForm';
 import RegisterEventForm from '../components/RegisterEventForm';
 
 // Components
-import Header from '../components/Header';
+import Header from '../components/Header.js';
 import Footer from '../components/Footer';
+import Nav from '../components/Nav';
+
+import SearchApp from '../components/SearchApp/SearchApp';
 
 // Initial Homepage search component(basically category/type select category select) ....   Goal is: On search button submit, Search_Results page comes up where the user will see (most recently?)added events for that event type on right side of screen, with advanced search options on the left panel
-import SearchTourneyTerra from '../components/SearchTourneyTerra';
-import RenderEvents from '../components/RenderEvents'
+
+import RenderEvents from '../components/SearchApp/RenderEvents'
 
 
 
@@ -37,35 +41,43 @@ const Home = () => {
 
   // RETURN
   return (
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={5}>
 
-    <Grid container spacing={3}>
 
-      <Grid item xs={12}>
-        <Header />
+        <Grid container item spacing={3}>
+          <Nav />
+        </Grid>
+
+        <Grid container item spacing={3}>
+          <Header />
+        </Grid>
+
+        <Grid container item spacing={3}>
+          <SearchApp />
+        </Grid>
+
+        <Grid container item spacing={3}>
+          <Button variant="contained" color="secondary" onClick={handleOpen}>
+            Register Event
+          </Button>
+          <ModalDialog open={open} handleClose={handleClose} />
+        </Grid>
+
+        <Grid container item spacing={3}>
+
+        </Grid>
+
+        <Grid container item spacing={3}>
+
+        </Grid>
+
+        <Grid container item spacing={3}>
+          <Footer />
+        </Grid>
+
       </Grid>
-
-      <Grid item xs={12} >
-        <SearchTourneyTerra />
-      </Grid>
-
-      <Grid item xs={12} >
-        <Button variant="contained" color="secondary" onClick={handleOpen}>
-          Register Event
-        </Button>
-        <ModalDialog open={open} handleClose={handleClose} />
-      </Grid>
-
-      <Grid item xs={12}>
-        
-        <RenderEvents />
-      </Grid>
-
-      <Grid item xs={12} >
-        <Footer />
-      </Grid>
-
-    </Grid>
-
+    </Box>
   );
 }
 

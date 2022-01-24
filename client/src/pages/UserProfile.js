@@ -7,7 +7,7 @@
 import React from 'react';
 import { Box } from '@material-ui/core';
 
-import Header from '../components/Header';
+import Header from '../components/Header.js';
 
 const UserProfile = () => {
 
