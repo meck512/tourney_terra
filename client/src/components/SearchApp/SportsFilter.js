@@ -2,8 +2,8 @@
 import React from 'react';
 
 // MUI
-
-
+import Checkbox from '@mui/material/Checkbox';
+import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
@@ -12,7 +12,6 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 
-import { useTheme } from '@mui/material/styles';
 
 
 const sports = [
@@ -79,20 +78,13 @@ const MenuProps = {
     },
 };
 
-function getStyles(name, searchInput, theme) {
-    return {
-        fontWeight:
-            searchInput.indexOf(name) === -1
-                ? theme.typography.fontWeightRegular
-                : theme.typography.fontWeightMedium,
-    };
-}
+
 
 
 
 // MAIN
 const SportsFilter = () => {
-    const theme = useTheme();
+
     const [searchInput, setSearchInput] = React.useState([]);
 
     const handleChange = (event) => {
@@ -110,7 +102,7 @@ const SportsFilter = () => {
     // RETURN
     return (
 
-        <FormControl sx={{ m: 1, width: 300 }}>
+        <FormControl variant="filled" sx={{ m: 1, width: 175 }}>
             <InputLabel id="introSearch">Sports</InputLabel>
             <Select
                 labelId="introSearch"
@@ -129,17 +121,14 @@ const SportsFilter = () => {
                 MenuProps={MenuProps}
             >
                 {sports.map((name) => (
-                    <MenuItem
-                        key={name}
-                        value={name}
-                        style={getStyles(name, searchInput, theme)}
-                    >
-                        {name}
+                    <MenuItem key={name} value={name}>
+                        <Checkbox checked={searchInput.indexOf(name) > -1} />
+                        <ListItemText primary={name} />
                     </MenuItem>
                 ))}
             </Select>
-        </FormControl> 
-     
+        </FormControl>
+
     );
 };
 

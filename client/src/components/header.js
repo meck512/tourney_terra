@@ -1,44 +1,60 @@
 // REACT
 import React from 'react';
-import heroIMG from '../assets/images/TourneyTerra_Color_Long.jpg';
-
-// import background from '../assets/images/stockallsportsimage.jpg';
+import heroIMG from '../assets/images/TourneyTerra_Black_Long.png';
 
 // MUI
-import Box from '@mui/material/Box';
 import CardMedia from '@mui/material/CardMedia';
 import { Grid, Paper } from '@material-ui/core';
 
+const classes = {
+  root: {
+    flexGrow: 1
+  },
+  paper: {
+    padding: 20,
+    textAlign: "center",
+
+  }
+};
 
 
-// MAIN
 const Header = () => {
 
 
-  // RETURN
+
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={2}>
-        <Paper >
-        PURPOSE STATEMENT
+<div style={classes.root}>
+    <Grid container >
+
+     
+        <Grid item xs={2}>
+          <Paper style={classes.paper} >
+            <p>PURPOSE STATEMENT</p>
           </Paper>
-      </Grid>
+        </Grid>
+   
 
-      <Grid item xs={8}>
-        <CardMedia
-          component="img"
-          image={heroIMG}
-          alt="TourneyTerra Large Logo"
-          height="350"
-          title="Hero"
-        />
-      </Grid>
+  
+        <Grid item xs={8}>
 
-      <Grid item xs={2}>
-        <Paper>USER INFO</Paper>
-      </Grid>
+          <CardMedia
+            component="img"
+            image={heroIMG}
+            alt="TourneyTerra Large Logo"
+            title="Hero"
+          />
+        </Grid>
+    
 
+    
+        <Grid item xs={2} >
+          <Paper style={classes.paper}>
+            <p>USER INFO</p>
+          </Paper>
+        </Grid>
+    
     </Grid>
+    </div>
   );
 };
 

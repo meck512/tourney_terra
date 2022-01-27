@@ -10,8 +10,16 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 
-import { useTheme } from '@mui/material/styles';
-
+// const ITEM_HEIGHT = 48;
+// const ITEM_PADDING_TOP = 8;
+// const MenuProps = {
+//     PaperProps: {
+//         style: {
+//             maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+//             width: 250,
+//         },
+//     },
+// };
 
 const esports = [
     'Archery',
@@ -66,31 +74,21 @@ const esports = [
     'Wrestling Folk'
 ];
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-    PaperProps: {
-        style: {
-            maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-            width: 250,
-        },
-    },
-};
 
-function getStyles(name, searchInput, theme) {
-    return {
-        fontWeight:
-            searchInput.indexOf(name) === -1
-                ? theme.typography.fontWeightRegular
-                : theme.typography.fontWeightMedium,
-    };
-}
+// function getStyles(name, searchInput, theme) {
+//     return {
+//         fontWeight:
+//             searchInput.indexOf(name) === -1
+//                 ? theme.typography.fontWeightRegular
+//                 : theme.typography.fontWeightMedium,
+//     };
+// }
 
 
 
 // MAIN
 const EsportsFilter = () => {
-    const theme = useTheme();
+    // const theme = useTheme();
     const [searchInput, setSearchInput] = React.useState([]);
 
     const handleChange = (event) => {
@@ -108,12 +106,13 @@ const EsportsFilter = () => {
     // RETURN
     return (
 
-        <FormControl sx={{ m: 1, width: 300 }}>
+        <FormControl sx={{ m: 1, width: 175 }}>
             <InputLabel id="introSearch">E-Sports</InputLabel>
             <Select
                 labelId="introSearch"
                 id="introSearchID"
                 multiple
+                autoWidth
                 value={searchInput}
                 onChange={handleChange}
                 input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
@@ -124,13 +123,13 @@ const EsportsFilter = () => {
                         ))}
                     </Box>
                 )}
-                MenuProps={MenuProps}
+                // MenuProps={MenuProps}
             >
                 {esports.map((name) => (
                     <MenuItem
                         key={name}
                         value={name}
-                        style={getStyles(name, searchInput, theme)}
+                        // style={getStyles(name, searchInput, theme)}
                     >
                         {name}
                     </MenuItem>

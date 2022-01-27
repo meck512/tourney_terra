@@ -108,7 +108,7 @@ const GamblingFilter = () => {
     // RETURN
     return (
 
-        <FormControl sx={{ m: 1, width: 300 }}>
+        <FormControl sx={{ m: 1, width: 175 }}>
             <InputLabel id="introSearch">Gambling/Bingo</InputLabel>
             <Select
                 labelId="introSearch"

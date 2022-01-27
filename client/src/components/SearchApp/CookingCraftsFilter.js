@@ -108,7 +108,7 @@ const CookingCraftsFilter = () => {
     // RETURN
     return (
 
-        <FormControl sx={{ m: 1, width: 300 }}>
+        <FormControl sx={{ m: 1, width: 175 }}>
             <InputLabel id="introSearch">Cooking/Crafts</InputLabel>
             <Select
                 labelId="introSearch"
