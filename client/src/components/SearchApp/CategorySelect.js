@@ -1,32 +1,59 @@
 import * as React from 'react';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
+
 
 const CategorySelect = () => {
-  const [value, setValue] = React.useState('female');
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
+  const handleListItemClick = (event, index) => {
+    setSelectedIndex(index);
   };
 
   return (
-    <FormControl>
-      <FormLabel id="demo-controlled-radio-buttons-group">Category Select</FormLabel>
-      <RadioGroup
-        aria-labelledby="demo-controlled-radio-buttons-group"
-        name="controlled-radio-buttons-group"
-        value={value}
-        onChange={handleChange}
-      >
-        <FormControlLabel value="Sports" control={<Radio />} label="Sports" />
-        <FormControlLabel value="E-Sports" control={<Radio />} label="E-Sports" />
-        <FormControlLabel value="Gambling/Bingo" control={<Radio />} label="Gambling/Bingo" />
-        <FormControlLabel value="Cooking/Crafts" control={<Radio />} label="Cooking/Crafts" />
-      </RadioGroup>
-    </FormControl>
+    <Box sx={{ width: '100%' }}>
+      <List component="nav" aria-label="main mailbox folders">
+
+        <ListItemButton selected={selectedIndex === 0} onClick={(event) => handleListItemClick(event, 0)} >
+          <ListItemText primary="Browse All" />
+        </ListItemButton>
+
+        <Divider />
+
+        <ListItemButton selected={selectedIndex === 1} onClick={(event) => handleListItemClick(event, 1)}>
+          <ListItemText primary="Sports" />
+        </ListItemButton>
+
+        <Divider />
+
+        <ListItemButton selected={selectedIndex === 2} onClick={(event) => handleListItemClick(event, 2)}>
+          <ListItemText primary="E-Sports" />
+        </ListItemButton>
+
+        <Divider />
+
+        <ListItemButton selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
+          <ListItemText primary="Gambling/Bingo" />
+        </ListItemButton>
+
+        <Divider />
+
+        <ListItemButton selected={selectedIndex === 4} onClick={(event) => handleListItemClick(event, 4)}>
+          <ListItemText primary="Cooking/Crafts" />
+        </ListItemButton>
+
+        <Divider />
+
+
+      </List>
+
+
+
+
+    </Box>
   );
 }
 

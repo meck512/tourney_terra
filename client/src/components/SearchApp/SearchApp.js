@@ -1,19 +1,19 @@
 // REACT
 import React from 'react';
 
-import SportsFilter from './SportsFilter';
-import EsportsFilter from './EsportsFilter';
-import GamblingFilter from './GamblingFilter';
-import CookingCraftsFilter from './CookingCraftsFilter';
+
 import DateFilter from './DateFilter';
 import RenderEvents from './RenderEvents';
 
 import CategorySelect from './CategorySelect';
 
+import { Button } from '@mui/material';
+
 // MUI
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
+import Divider from '@mui/material/Divider';
 
 import Grid from '@mui/material/Grid';
 
@@ -39,9 +39,223 @@ const classes = {
     searchappTheme: {
         padding: 20,
         textAlign: "center",
-       
+
     }
 };
+
+const sportsList = [
+    'Archery',
+    'Badminton',
+    'Baseball',
+    'Bjj',
+    'Body-Building/Fitness/Bikini',
+    'Bowling',
+    'Boxing',
+    'Cricket',
+    'Cycling',
+    'Darts',
+    'Disc-Golf',
+    'Fencing',
+    'Figure-Skating',
+    'Fishing',
+    'Football',
+    'Golf',
+    'Gymnastics',
+    'Ice Hockey',
+    'Ice Skating',
+    'Jet Skiing',
+    'Judo',
+    'Karate',
+    'Kickboxing',
+    'Muay Thai',
+    'Pool',
+    'Rock-Climbing',
+    'Roller Skating',
+    'Rugby Union 7s',
+    'Rugby Union 15s',
+    'Rugby',
+    'Rugby (Tough/Flag)',
+    'Running/Cross Country',
+    'Sambo',
+    'Skateboarding',
+    'Skiing',
+    'SnowBoarding',
+    'Soccer',
+    'Sumo Wrestling',
+    'Surfing',
+    'Swimming',
+    'Table Tennis',
+    'Taekwando',
+    'Tennis',
+    'Track and Field',
+    'Volleyball',
+    'Water-Skiing',
+    'Weight Lifting',
+    'Wrestling Freestyle',
+    'Wrestling Greco Roman',
+    'Wrestling Folk'
+];
+
+const esportList = [
+    'Archery',
+    'Badminton',
+    'Baseball',
+    'Bjj',
+    'Body-Building/Fitness/Bikini',
+    'Bowling',
+    'Boxing',
+    'Cricket',
+    'Cycling',
+    'Darts',
+    'Disc-Golf',
+    'Fencing',
+    'Figure-Skating',
+    'Fishing',
+    'Football',
+    'Golf',
+    'Gymnastics',
+    'Ice Hockey',
+    'Ice Skating',
+    'Jet Skiing',
+    'Judo',
+    'Karate',
+    'Kickboxing',
+    'Muay Thai',
+    'Pool',
+    'Rock-Climbing',
+    'Roller Skating',
+    'Rugby Union 7s',
+    'Rugby Union 15s',
+    'Rugby',
+    'Rugby (Tough/Flag)',
+    'Running/Cross Country',
+    'Sambo',
+    'Skateboarding',
+    'Skiing',
+    'SnowBoarding',
+    'Soccer',
+    'Sumo Wrestling',
+    'Surfing',
+    'Swimming',
+    'Table Tennis',
+    'Taekwando',
+    'Tennis',
+    'Track and Field',
+    'Volleyball',
+    'Water-Skiing',
+    'Weight Lifting',
+    'Wrestling Freestyle',
+    'Wrestling Greco Roman',
+    'Wrestling Folk'
+];
+
+const cookingCraftList = [
+    'Archery',
+    'Badminton',
+    'Baseball',
+    'Bjj',
+    'Body-Building/Fitness/Bikini',
+    'Bowling',
+    'Boxing',
+    'Cricket',
+    'Cycling',
+    'Darts',
+    'Disc-Golf',
+    'Fencing',
+    'Figure-Skating',
+    'Fishing',
+    'Football',
+    'Golf',
+    'Gymnastics',
+    'Ice Hockey',
+    'Ice Skating',
+    'Jet Skiing',
+    'Judo',
+    'Karate',
+    'Kickboxing',
+    'Muay Thai',
+    'Pool',
+    'Rock-Climbing',
+    'Roller Skating',
+    'Rugby Union 7s',
+    'Rugby Union 15s',
+    'Rugby',
+    'Rugby (Tough/Flag)',
+    'Running/Cross Country',
+    'Sambo',
+    'Skateboarding',
+    'Skiing',
+    'SnowBoarding',
+    'Soccer',
+    'Sumo Wrestling',
+    'Surfing',
+    'Swimming',
+    'Table Tennis',
+    'Taekwando',
+    'Tennis',
+    'Track and Field',
+    'Volleyball',
+    'Water-Skiing',
+    'Weight Lifting',
+    'Wrestling Freestyle',
+    'Wrestling Greco Roman',
+    'Wrestling Folk'
+];
+
+const gamblingList = [
+    'Archery',
+    'Badminton',
+    'Baseball',
+    'Bjj',
+    'Body-Building/Fitness/Bikini',
+    'Bowling',
+    'Boxing',
+    'Cricket',
+    'Cycling',
+    'Darts',
+    'Disc-Golf',
+    'Fencing',
+    'Figure-Skating',
+    'Fishing',
+    'Football',
+    'Golf',
+    'Gymnastics',
+    'Ice Hockey',
+    'Ice Skating',
+    'Jet Skiing',
+    'Judo',
+    'Karate',
+    'Kickboxing',
+    'Muay Thai',
+    'Pool',
+    'Rock-Climbing',
+    'Roller Skating',
+    'Rugby Union 7s',
+    'Rugby Union 15s',
+    'Rugby',
+    'Rugby (Tough/Flag)',
+    'Running/Cross Country',
+    'Sambo',
+    'Skateboarding',
+    'Skiing',
+    'SnowBoarding',
+    'Soccer',
+    'Sumo Wrestling',
+    'Surfing',
+    'Swimming',
+    'Table Tennis',
+    'Taekwando',
+    'Tennis',
+    'Track and Field',
+    'Volleyball',
+    'Water-Skiing',
+    'Weight Lifting',
+    'Wrestling Freestyle',
+    'Wrestling Greco Roman',
+    'Wrestling Folk'
+];
+
+
 // MAIN
 const SearchApp = () => {
 
@@ -55,41 +269,13 @@ const SearchApp = () => {
                 <Grid item xs={2} >
 
                     <Paper sx={{ height: 800 }} style={classes.searchappTheme}>
-                        
+
                         <CategorySelect />
-                        
-                        
-                        <SportsFilter />
-                        <EsportsFilter />
-                        <GamblingFilter />
-                        <CookingCraftsFilter />
+
                         <DateFilter />
-                        {/* <Stack spacing={1}>
-                        <Item>
-                            <SportsFilter />
-                        </Item>
 
-                        <Item>
-                            <EsportsFilter />
-                        </Item>
+                        <Button type="submit" variant="contained" color="primary">Search</Button>
 
-                        <Item>
-                            <GamblingFilter />
-                        </Item>
-
-                        <Item>
-                            <CookingCraftsFilter />
-                        </Item>
-
-                        <Item>
-                            <DateFilter />
-                        </Item>
-
-                        <Item>
-                            Divisions/Gender
-                        </Item>
-
-                    </Stack> */}
                     </Paper>
                 </Grid>
 
