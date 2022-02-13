@@ -21,7 +21,7 @@ const DateFilter = () => {
           renderInput={(params) => <TextField {...params} />}
         /> */}
         <DesktopDatePicker
-        
+      
           label="Date"
           value={value}
           minDate={new Date('2022-01-01')}

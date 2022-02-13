@@ -9,7 +9,8 @@ import ModalDialog from '../components/ModalDialog';
 import { Grid } from '@mui/material';
 import { Box } from '@mui/material';
 
-
+import Paper from '@mui/material';
+// import Image from '../assets/images/Untitled.png';
 // FORMS (not highlighted because they are not rendered until clicked)
 import LoginForm from '../components/LoginForm';
 import SignupForm from '../components/SignupForm';
@@ -22,7 +23,11 @@ import SearchApp from '../components/SearchApp/SearchApp';
 import Footer from '../components/Footer';
 
 
-
+const styles = {
+  paperContainer: {
+      backgroundImage: `url(${Image})`
+  }
+};
 
 const Home = () => {
 
@@ -38,7 +43,7 @@ const Home = () => {
 
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} style={styles.paperContainer}>
 
       <Grid container spacing={5}>
 
