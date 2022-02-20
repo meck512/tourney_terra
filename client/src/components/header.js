@@ -38,14 +38,14 @@ const Header = () => {
 
 
         <Grid item xs={6}>
-          <Paper >
+ 
             <CardMedia
               component="img"
               image={heroIMG}
               alt="TourneyTerra Large Logo"
               title="Hero"
             />
-          </Paper>
+         
         </Grid>
 
 

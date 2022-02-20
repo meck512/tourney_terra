@@ -3,21 +3,21 @@ import React from 'react';
 import heroIMG from '../../assets/images/TourneyTerra_Color_Long.png';
 
 import DateFilter from './DateFilter';
-import SingleEvent from './SingleEventCard'
+import SingleEventCard from './SingleEventCard'
 
 
 // MUI
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import Divider from '@mui/material/Divider';
+// import Divider from '@mui/material/Divider';
 import { Chip } from '@mui/material';
 import { FormControl } from '@mui/material';
 import { FormLabel } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { CardMedia } from '@mui/material';
 
-import Portal from '@mui/material/Portal';
+// import Portal from '@mui/material/Portal';
 
 import Button from '@mui/material/Button';
 
@@ -278,14 +278,11 @@ const SearchApp = () => {
     // RETURN
     return (
         <div style={classes.root}>
-            <Grid container spacing={1}>
+            <Grid container>
 
                 <Grid item xs={2} >
 
                     <Paper sx={{ height: 800 }} style={classes.searchappTheme}>
-
-
-
 
                         <FormControl>
                             <FormLabel id="categorySelection"></FormLabel>
@@ -298,7 +295,7 @@ const SearchApp = () => {
                                 <Button control={<Stack />} label="cook" >Cooking/Crafts</Button>
 
                                 <Button value={value} disabled>Disabled</Button>
-                                {show ? (
+                                {/* {show ? (
                                     <Portal container={container.current}>
                                         <Paper>
                                             {sportsList.map((sport) => (
@@ -306,54 +303,33 @@ const SearchApp = () => {
                                             ))}
                                         </Paper>
                                     </Portal>
-                                ) : null}
+                                ) : null} */}
                             </Stack>
 
 
                             <Paper sx={{ my: 2, mx: 2, color: 'white' }}>
-                            <DateFilter />
+                                <DateFilter />
                             </Paper>
 
-                          
+
 
                             <Button type="submit" variant="contained" color="primary">Search</Button>
                         </FormControl>
 
-
-
                     </Paper>
                 </Grid>
 
-                <Grid xs={9}>
-
-                    <Stack spacing={1}>
-
-                        <Item>
-                            <CardMedia
-                                component="img"
-                                image={heroIMG}
-                                alt="TourneyTerra Large Logo"
-                                title="Hero"
-                            />
-                        </Item>
-
-                        <Grid
-                            container
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="center"
-                            >
-
-                            <SingleEvent />
-                        </Grid>
-
-                    </Stack>
+                <Grid xs>
+                    <Grid
+                        container
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="center"
+                    >
+                        <SingleEventCard />
+                    </Grid>
 
                 </Grid>
-
-
-
-
 
             </Grid>
 

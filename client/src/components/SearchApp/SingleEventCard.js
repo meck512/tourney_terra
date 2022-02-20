@@ -103,7 +103,7 @@ const itemData = [
 const styles = {
     paperContainer: {
         backgroundColor: 'black',
-       
+
     }
 };
 
@@ -122,16 +122,16 @@ const EventCard = () => {
                     />
                     <CardContent >
                         <Typography gutterBottom variant="h5" component="div">
-                        {item.title}
+                            {item.title}
                         </Typography>
                         <Typography variant="body2" color="text.default">
-                        {item.date}
+                            {item.date}
                         </Typography>
                         <Typography variant="body2" color="text.default">
-                        {item.location}
+                            {item.location}
                         </Typography>
                         <Typography variant="body2" color="text.default">
-                        {item.author}
+                            {item.author}
                         </Typography>
                     </CardContent>
                     <CardActions>
